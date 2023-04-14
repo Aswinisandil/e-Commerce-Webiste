@@ -17,7 +17,8 @@ loginForm.addEventListener('submit',(event) => {
 
     const validUser = validCredentials.find(user => user.username === username && user.password === password)
     if(validUser){
-        alert(validCredentials.innerHTML = `Welcome ${username}!`)
+        alert(validCredentials.innerHTML = `Welcome ${username}!`);
+        window.location.href = "http://127.0.0.1:5501/Homepage.html";
 
     } else {
         alert("Invalid Username and Password");
@@ -48,6 +49,4 @@ const formEl = document.querySelector('.loginform');
 
         });
 
- function Home(){
-    window.location.href = "http://127.0.0.1:5501/Homepage.html";
- }       
+       
