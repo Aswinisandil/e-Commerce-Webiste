@@ -5,21 +5,32 @@
     font-family: "poppins", sans-serif;
 }
 
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .container{
-    width: 100%;
-    height: 100vh;
+    width: max(100%,100vw);
+    height: max(100%,100vh);
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.25fr 70vh 0.8fr;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto 3fr auto;
+    grid-template-areas: 
+    "nav-bar nav-bar nav-bar nav-bar"
+    "hero hero hero hero"
+    "foot foot foot foot"
+    ;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .nav-bar{
-    grid-column: 1 /5 ;
-    grid-row: 1 / 2;
+    grid-area: nav-bar;
     background-color: rgba(14, 41, 45, 0.891);
     display: flex;
     justify-content: space-between;
-    max-height: 3.5em;
+    height: max(3.5em,4em)
 }
 
 .logo img{
@@ -48,45 +59,107 @@
     padding: 1em 3em;
     font-size: 800;
 }
-
-
-.hero{ 
-    position: relative;
-    grid-column: 1 / 5;
-    grid-row: 2 / 3;
-    display: flex;
-    justify-content: space-between;
+.hero{
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: "carousel loginform"
+    "carousel loginform";
+    flex-direction: row;
+    justify-content: center;
+    grid-row-gap: 0;
 }
 
-.hero img{
-    grid-column: 1 / 3;
-    grid-row: 2 / 3;
-    flex-shrink: 2;
-
-    /* width: minmax(350px,750px); */
-    /* height: minmax(250px,550px); */
-
+.carousel{
+    height: 500px;
+    grid-area: carousel;
 }
 
-.form-1{
-    min-width: 50vw;
-    grid-column: 3 / 5;
-    grid-row: 2 / 3;
-    display: flex;
-    flex-shrink: 2;
+.carousel-item img{
+    width: 500px;
+    height: 500px;
+}
 
+
+.loginform {
+    padding: 1em 3em 0 3em;
+    grid-area: loginform;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-footer{
-    padding: 1.5em 5em;
-    grid-column: 1 / 5;
-    grid-row: 3/ 5;
-    background-color: rgba(14, 41, 45, 0.891);
+.loginform h2{
+    letter-spacing: 0.05em;
+
+}
+
+.loginform button{
+    top: 1em;
+    background-color: rgba(16, 43, 47, 0.891);
+    border: none;
+    height: 3em;
+    width: 20em ;
+    color: white;
+}
+.signing{
+    padding: 1em 4em 0 4em;
+}
+
+.signed{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    gap: 0.5em;
+}
+.signed input{
+    background-color: rgba(14, 41, 45, 0.891);
+}
+
+.social-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.social-icons .icon{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    width: 6em;
+    height: 6em;
+}
+
+.icon i{
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(187, 182, 182);
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 1em;
+}
+
+.icon p{
+    color: rgb(187, 182, 182);
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.foot{
+    width: 100vw;
+    height: 15em;
+    grid-area: foot;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5em 5em;
+    background-color: rgba(14, 41, 45, 0.891);
     font-weight: 200;
     font-size: 0.9em;
 }
@@ -105,4 +178,36 @@ footer ul{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.social{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: bisque;
+}
+.news{
+    display: flex;
+    justify-content:center;
+}
+.social input{
+    top: 3em;
+    width: 24em;
+    border-radius: 18px;
+    height: 2.5em;
+    border: none;
+    padding: 1em;
+}
+
+.newsletter h6{
+    margin-bottom: 1em;
+}
+
+.news button{
+    border: none;
+    width: 7em;
+    border-radius: 3.5em;
+    margin-left: -7em;
+
 }

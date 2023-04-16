@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce website</title>
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
 </head>
 <body>
 
@@ -19,33 +22,74 @@
                 <a href="#" class="item">Categories</a>
                 <a href="#" class="item">Sale</a>
             </ul>
-            <div class="seller">Become a Seller</div>
+           
+            <div class="seller">New to ShopIt ? <a href="#">Signup for free</a></div>
         </nav>
 
         <section class="hero">
-            <div class="image">
-                <img src="https://img.freepik.com/premium-photo/beautiful-asian-woman-carrying-colorful-bags-shopping-online-with-mobile-phone_8087-3877.jpg" alt="">
+            <div class="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="https://handlemycomplaint.com.au/wp-content/uploads/2022/11/AdobeStock_306925326-scaled.jpeg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://www.shopickr.com/wp-content/uploads/2017/01/and-fashion-sale-india.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="https://adn-static1.nykaa.com/media/wysiwyg/2022/bank-offers/HDFC_T_C_Banner_beauty.jpg" alt="Third slide">
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-                <form class="loginform">
-                    <p>Login</p>
+            <form class="loginform">
+                    <h2>Sign In</h2>
+                    <div>
                     <label for="username"> Username : </label>
                     <input name="username" type="text" id="username" >
+                    </div>
                     <br>
+                    <div>
                     <label for="password"> Password :</label>
                     <input name="password" type="password" id ="password">
+                    </div>
                     <br>
-                    <label for="Terms & Conditions">Terms & Conditions</label>
-                    <input name="Terms& Conditions" id="terms" type="checkbox">
-                    <br>
-                    <button type="submit">Submit</button>
+                    <div><a href="https://fakestoreapi.com/users">Forgot Password?</a></div>
+                    <button type="submit">Sign In</button>
+                    <p class="signing">By signing in, I agree to the <a href="#">ShopIt's Privacy Statement</a> and <a href="#">Terms of Service</a></p>
+                    <div class="signed">
+                    <input type="checkbox" name="stay signed in">
+                    <label for="stay signed in">Stay signed in</label>
+                    </div>
+
+                    <p>Or Sign in with</p>
+                    <div class="social-icons">
+                    <div class="icon">
+                        <i class="fa-brands fa-google"></i>
+                        <p>Google</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-apple"></i>
+                        <p>Apple</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-facebook"></i>
+                        <p>Facebook</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa-brands fa-github"></i>
+                        <p>Github</p>
+                    </div>
+                </div>
+            
+            
+            
                 </form>
-            </div>
         </section>
-        <footer>
+        <footer class="foot">
             <ul>
                 <a class="footer-head"  href="">
-                    <h5>About</h5>
+                    <h6>About</h6>
                 </a>
                 <a href="#">Contact Us</a>
                 <a href="#">About Us</a>
@@ -53,7 +97,7 @@
             </ul>
             <ul>
                 <a class="footer-head" href="#">
-                    <h5>Help</h5>
+                    <h6>Help</h6>
                 </a>
                 <a href="#">Payments</a>
                 <a href="#">Returns</a>
@@ -62,7 +106,7 @@
             </ul>
             <ul>
                 <a class="footer-head" href="#">
-                    <h5>Consumer Policy</h5>
+                    <h6>Consumer Policy</h6>
                 </a>
                 <a href="#">Return policy</a>
                 <a href="#">Terms of Use</a>
@@ -70,11 +114,13 @@
                 <a href="#">Privacy</a>
             </ul>
 
-            <div class="Social">
+            <div class="social">
                 <div class="newsletter">
-                  <h5>Subscribe for our Newsletter</h5>
+                  <h6>Subscribe for our Newsletter</h6>
+                  <div class="news">
                   <input type="email" name="email" placeholder="example@gmail.com">
                   <button>Subscribe</button>
+                </div>
                 </div>
                 
             </div>
@@ -83,6 +129,9 @@
    
 
     <script src="login.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
 

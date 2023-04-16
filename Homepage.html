@@ -15,6 +15,7 @@
     />
   </head>
   <body>
+    <div class="complete">
     <section class="container">
       
       <nav class="nav-bar">
@@ -29,7 +30,7 @@
         </div>
         <ul  class="navList">
          
-          <li><a href="./Homepage.html"><p>Home</p></a></li>
+          <li><a href="./Homepage.html">Home</a></li>
           <li><a href="#">Categories</a></li>
           <li><a href="#">Sale</a></li>
           <li><a href="#">About</a></li>
@@ -40,19 +41,19 @@
         
 
         <div class="search-bar">
-          <input name="search" type="text" placeholder="Search for Products" />
-            <button><ion-icon class="search" name="search-outline"></ion-icon></button>
+          <input id="search-input"  name="search" type="text" placeholder="Search for Products" />
+            <button id="search"><ion-icon  name="search-outline"></ion-icon></button>
           
         </div>
 
         <div class="user-data">
           <buttom class="user-down"onclick="userDown()">Hello user <i class="fa fa-caret-down"></i></button>
-            <div id="userD">
-              <li class="d">Your Account</li>
-              <li class="d">Order History</li>
-              <li class="d">WishList</li>
-              <li class="d">Your Seller Account</li>
-              <li class="d">Logout</li>
+            <div id="userD" class="dropDown-content">
+              <a class="d">Your Account</a>
+              <a class="d">Order History</a>
+              <a class="d">WishList</a>
+              <a class="d">Your Seller Account</a>
+              <a class="d" onclick="logOut()">Logout</a>
 
 
             </div>
@@ -95,7 +96,28 @@
       </div>
     </section> 
 
-    
+    <section class="filter">
+      <div class="filter-item">
+        <img src="https://www.muji.com/wp-content/uploads/sites/33/2019/12/EOSS-digital-post-07.jpg" alt="All">
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+      </div>
+      <div class="filter-item">
+        <img src="https://www.finder.com/finder-us/wp-uploads/sites/5/2019/05/Men_icondenimjacket-gapcanada_Supplied_300x300.jpg" alt="Men">
+        <button class="button-value"onclick="filterProduct(`men's`)">men's</button>
+      </div>
+      <div class="filter-item">
+        <img src="https://cdn.shopify.com/s/files/1/0376/9253/9018/files/GIRLS_1024x1024_crop_center.png?v=1679329124" alt="Women">
+        <button class="button-value" onclick="filterProduct(`women's`)">women's</button>
+      </div>
+      <div class="filter-item">
+        <img src="https://www.blog1.trymintly.com/wp-content/uploads/2022/11/Surat.jpeg" alt="Jewellery">
+        <button class="button-value"onclick="filterProduct('jewelery')">jewelery</button>
+      </div>
+      <div class="filter-item">
+        <img src="https://pestleanalysis.com/wp-content/uploads/2016/09/apple-swot-analysis.jpg" alt="Electronics">
+        <button class="button-value"onclick="filterProduct('electronics')">electronics</button>
+      </div>
+    </section>
 
     <section>
       <div class="products"></div>
@@ -147,6 +169,7 @@
         </div>
       </div>
     </footer>
+  </div> 
 
     <script
       type="module"

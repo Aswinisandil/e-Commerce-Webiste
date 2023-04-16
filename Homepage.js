@@ -1,7 +1,8 @@
 const productsEl = document.querySelector(".products");
 const cartItemsEl = document.querySelector(".cart-items");
-const subtotalEl = document.querySelector(".subtotal");
-const cartEl = document.querySelector(".cart");
+let subtotalEl = document.querySelector(".subtotal");
+let cartEl = document.querySelector(".cart");
+let cards = document.querySelectorAll(".product");
 
 
 
@@ -10,12 +11,14 @@ const product = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
   const data = await res.json();
   for (let i = 0; i < data.length; i++) {
+    
+
     productsEl.innerHTML += `
-            <div class="product">
+            <div class="product ${data[i].category}" id ="card">
                 <div class = "product-image">
                 <img src="${data[i].image}" alt="">
                 </div>
-                <h4 class="product-title">${data[i].title}</h4>
+                <h4 class="product-title ${data[i].title}">${data[i].title.toUpperCase()}</h4>
                 <h5 class="product-category">${data[i].category}</h5>
                 <p class="product-description"${data[i].description}></p>
                 <div class="price-details">
@@ -26,11 +29,20 @@ const product = async () => {
                 </div>
             </div>
             `;
+            
   }
-};
+
+  
+}
+
 product();
 
 productsEl.addEventListener("DOMContentLoaded", product);
+
+
+
+
+
 
 // Add to cart
 
@@ -157,29 +169,100 @@ function closeCart(){
   }
 }
 
-// function userDown(){
-//   let x = document.getElementById("userD");
-//   if(x.className = "user-down"){
-//     x.className += " openData";
-//   }else{
-//     x.className += " ";
-//   }
-
-// }
-
 function userDown(){
-  document.getElementById('userD').classList.toggle("openData");
+  document.getElementById("userD").classList.toggle("show");
 }
 
 window.onclick = function(e){
-  if(!e.target.matches('user-down')){
-    let myDropDown = document.getElementById('userD');
-    if(myDropDown.classList.contains("openData")){
-      myDropDown.classList.remove("openData");
+  if(e.target.matches(".user-down")){
+    let myDropDown = document.getElementById("userD");
+    if(myDropDown.classList.contains("show")){
+      myDropDown.classList.remove("show");
     }
   }
 }
 
+function logOut(){
+  window.location.href = "http://127.0.0.1:5501/login.html";
+}
 
+let card = document.querySelectorAll("#card");
+
+
+function filterProduct(value) {
+  //Button class code
+  let buttons = document.querySelectorAll(".button-value");
+  buttons.forEach((button) => {
+    //check if value equals innerText
+    if (value.toUpperCase() == button.innerText.toUpperCase()) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
+
+
+  //select all cards
+  let elements = document.querySelectorAll(".product");
+  //loop through all cards
+  elements.forEach((element) => {
+    //display all cards on 'all' button click
+    if (value == "all") {
+      element.classList.remove("hide");
+    } else {
+      //Check if element contains category class
+      if (element.classList.contains(value)) {
+        //display element based on category
+        element.classList.remove("hide");
+      } else {
+        //hide other elements
+        element.classList.add("hide");
+      }
+    }
+  });
+}
+
+// document.getElementById("search").addEventListener("click", () =>{
+//   let elements = document.querySelectorAll(".product-title");
+//   let searchInput = document.getElementById("search-input").value;
+  
+//       elements.forEach((element) =>{
+//         if(element.innerText.includes(searchInput.toUpperCase())){
+//           cards.classList.remove("visible");
+//         }else{
+//           cards.classList.add("visible");
+//         }
+//       })
+//     }) 
+  
+
+    document.getElementById("search").addEventListener("click", () => {
+      //initializations
+      let searchInput = document.getElementById("search-input").value;
+      let elements = document.querySelectorAll(".product-title");
+      let cards = document.querySelectorAll("#card");
+    
+      //loop through all elements
+      elements.forEach((element, index) => {
+        //check if text includes the search value
+        if (!element.innerText.includes(searchInput.toUpperCase())) {
+          //display matching card
+          cards[index].classList.add("hide");
+        } else {
+          //hide others
+          cards[index].classList.remove("hide");
+        }
+        
+      });
+    });  
+    
+  //   let elements = document.querySelectorAll(".product-title");
+  //   window.onload = () => {
+  //     cards.forEach((index) => {
+  //     cards[index].classList.remove("visible");
+  //     filterProduct("all");
+
+  //   })
+  // }
 
 
