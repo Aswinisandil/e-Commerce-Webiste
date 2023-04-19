@@ -1,34 +1,34 @@
 var signupEl = document.querySelector('.registerform');
- var loginformEl = document.querySelector('.loginform');
- var username = loginformEl.username.value;
- var password = loginformEl.password.value
+var loginformEl = document.querySelector('.loginform');
+ 
+var signIn = document.getElementById('submit');
+
+ signIn.addEventListener('click',(e)=>{
+  e.preventDefault();
 
 
-loginformEl.addEventListener('submit', (event) => {
-  event.preventDefault();
+ var log_username = document.getElementById('log_username').value;
+ var log_password = document.getElementById('log_password').value;
+
+  let userobj = localStorage.getItem('user')
+  console.log(userobj)
+
+  let userArray = JSON.parse(userobj)
+
+  console.log(userArray)
+
 
  
-  if(!username || !password){
-    document.getElementById('usercontrol').innerHTML = "** please enter the username";
-    document.getElementById('passwordcontrol').innerHTML = "** please enter the password";
+  if(( log_username === userArray.reg_username) && (log_password === userArray.reg_password)){
+    
+    window.location.href = "http://127.0.0.1:5501/Homepage.html";
 
+  } else{
+    alert(" Username or Password is incorrect");
   }
-
-  localStorage.setItem('username',username);
-  localStorage.setItem('password',password);
-
 
 })
 
-// function loggedIn(){
-//   if((username === "Shopit123") && (password === "123456")){
-    
-//     window.location.href = "http://127.0.0.1:5501/Homepage.html";
-    
-//     console.log("Hello ${username}");
-
-//   }  
-// }
 
 function signup(){
     window.location.href = "http://127.0.0.1:5501/registorForm.html";
