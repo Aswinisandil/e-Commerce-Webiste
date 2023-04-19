@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto 80vh auto;
+    grid-template-areas: 
+    "nav-bar nav-bar nav-bar nav-bar"
+    "hero hero hero hero"
+    "footer footer footer footer"
+    ;
+}
+
+.nav-bar{
+    grid-area: nav-bar;
+    background-color: rgba(14, 41, 45, 0.891);
+    display: flex;
+    justify-content: space-between;
+    height: max(3.5em,4em)
+}
+
+.logo img{
+    max-width: 8em;
+    min-height: 2em;
+    padding: 0.2em 0 0 2em;
+}
+
+.nav-items{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    gap: 6em;
+    padding: 1em;
+    
+}
+
+.nav-items a{
+    color: white;
+    font-size: 800;
+    text-decoration: none;
+}
+
+.seller{
+    color: white;
+    padding: 1em 3em;
+    font-size: 800;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.seller a{
+    text-decoration: none;
+    color: white;
+}
+
+.hero{
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-areas: 
+    "side-image registerform"
+    "side-image registerform"
+    ;
+}
+
+.side-image{
+    max-width: 100%;
+    grid-area: side-image;
+    height: auto;
+}
+
+.side-image img{
+    display: flex;
+    max-width: 100%;
+    height: 100%;
+}
+
+.registerform{
+    grid-area: registerform;
+    padding: 0em 2em 0 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.registerform h2{
+    display: flex;
+    padding: 0.5em;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-in{
+    width: min(24em,100%);
+    height: min(4em,100%);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.form-in label{
+    color: rgba(14, 41, 45, 0.891);
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 0.5em;
+}
+.form-side{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-in input{
+    margin-top: 0.1em;
+    width: 70%;
+    border: 1px solid grey;
+    border-radius: 1em;
+}
+.registerform button{
+    top: 1em;
+    background-color: rgba(16, 43, 47, 0.891);
+    border: none;
+    border-radius: 2em;
+    height: 4em;
+    width: 20em;
+    color: white;
+    padding: 1em;
+}
+
+.signing{
+    padding: 2em 5em 2em 5em;
+    font-size: 0.9em;
+}
+
+.regi-line{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+.regi-line div{
+    width: 8em;
+    height: 1px;
+    border: 0.5px solid grey;
+}
+
+
+.social-icons{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 4em;
+    margin-bottom: 1em;
+}
+
+.social-icons .icon{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    width: 6em;
+    height: 6em;
+}
+
+.icon i{
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(187, 182, 182);
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+}
+
+.icon p{
+    color: rgb(187, 182, 182);
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+
+.foot{
+    width: 100vw;
+    height: 15em;
+    grid-area: foot;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5em 5em;
+    background-color: rgba(14, 41, 45, 0.891);
+    font-weight: 200;
+    font-size: 0.9em;
+}
+
+.footer-head{
+    color: bisque;
+    font-size: 1.2em;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer h6{
+    font-size: 1.1em;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.social{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: bisque;
+}
+.news{
+    display: flex;
+    justify-content:center;
+}
+.social input{
+    top: 3em;
+    width: 24em;
+    border-radius: 18px;
+    height: 2.5em;
+    border: none;
+    padding: 1em;
+}
+
+.newsletter h6{
+    margin-bottom: 1em;
+}
+
+.news button{
+    border: none;
+    width: 7em;
+    border-radius: 3.5em;
+    margin-left: -7em;
+
+}
+
+

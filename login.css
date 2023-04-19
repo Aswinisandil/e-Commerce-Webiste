@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.container{
+    width: max(100%,100vw);
+    height: max(100%,100vh);
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "nav-bar nav-bar nav-bar nav-bar"
+    "hero hero hero hero"
+    "foot foot foot foot"
+    ;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-bar{
+    grid-area: nav-bar;
+    background-color: rgba(14, 41, 45, 0.891);
+    display: flex;
+    justify-content: space-between;
+    height: max(3.5em,4em)
+}
+
+.logo img{
+    max-width: 8em;
+    min-height: 2em;
+    padding: 0.2em 0 0 2em;
+}
+
+.nav-items{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    gap: 6em;
+    padding: 1em;
+    
+}
+
+.nav-items a{
+    color: white;
+    font-size: 800;
+    text-decoration: none;
+}
+
+.seller{
+    color: white;
+    padding: 1em 3em;
+    font-size: 800;
+}
+.hero{
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: "carousel loginform"
+    "carousel loginform";
+}
+
+.carousel{
+    max-width:100%;
+    grid-area: carousel;
+    height: auto;
+}
+
+.carousel-item img{
+    display: flex;
+    max-width: 100%;
+    height: 572px;
+}
+
+@media only screen and (max-width: 480px){
+    .hero{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+    }
+
+    .carousel{
+        display: none;
+    }
+    .carousel-item img{
+        display: flex;
+        max-width: 100%;
+        height: auto;
+        width: 50%;
+    }
+
+
+}
+
+.loginform {
+    padding: 0em 3em;
+    grid-area: loginform;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.loginform h2{
+    letter-spacing: 0.1em;
+    font-size: 2em;
+    margin: 0.4em 0 0.4em;
+}
+
+.form-in{
+    width: min(22em,100%);
+    height: min(3em,100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 1em;
+}
+
+.form-in label{
+    color: rgba(14, 41, 45, 0.891);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+}
+
+.form-in input{
+    margin-top: 0.1em;
+    width: 60%;
+    border: 1px solid grey;
+    border-radius: 1em;
+    padding: 0.5em;
+}
+
+.forgot{
+    float: left;
+    width: 75%;
+    padding: 0.5em;
+}
+
+.form-side{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+
+.loginform button{
+    top: 1em;
+    background-color: rgba(16, 43, 47, 0.891);
+    border: none;
+    border-radius: 2em;
+    height: 3em;
+    width: 18em;
+    color: white;
+    padding: 0.7em;
+}
+.signing{
+    padding: 1em 5em 0em 5em;
+}
+
+.signed{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+}
+
+.signed p{
+    margin-top: 10px;
+}
+
+.signed div{
+    width:8em;
+    height: 1px;
+    border: 0.5px solid grey;
+} 
+.signed input{
+    background-color: rgba(14, 41, 45, 0.891);
+}
+
+
+.social-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.social-icons .icon{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    width: 6em;
+    height: 6em;
+}
+
+.icon i{
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(187, 182, 182);
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+}
+
+.icon p{
+    color: rgb(187, 182, 182);
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.foot{
+    width: 100vw;
+    height: 15em;
+    grid-area: foot;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5em 5em;
+    background-color: rgba(14, 41, 45, 0.891);
+    font-weight: 200;
+    font-size: 0.9em;
+}
+
+.footer-head{
+    color: bisque;
+    font-size: 1.2em;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.social{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: bisque;
+}
+.news{
+    display: flex;
+    justify-content:center;
+}
+.social input{
+    top: 3em;
+    width: 24em;
+    border-radius: 18px;
+    height: 2.5em;
+    border: none;
+    padding: 1em;
+}
+
+.newsletter h6{
+    margin-bottom: 1em;
+}
+
+.news button{
+    border: none;
+    width: 7em;
+    border-radius: 3.5em;
+    margin-left: -7em;
+
+}
