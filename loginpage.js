@@ -22,6 +22,9 @@ var signIn = document.getElementById('submit');
   if(( log_username === userArray.reg_username) && (log_password === userArray.reg_password)){
     
     window.location.href = "http://127.0.0.1:5501/Homepage.html";
+    
+    localStorage.setItem('loggedIn',true);
+
 
   } else{
     alert(" Username or Password is incorrect");
@@ -30,9 +33,20 @@ var signIn = document.getElementById('submit');
 })
 
 
-function signup(){
+function signUp(){
     window.location.href = "http://127.0.0.1:5501/registorForm.html";
-  
-  } 
-  
+}
+
+  window.onload = function(e){
+    e.preventDefault();
+    if(localStorage.getItem('loggedIn')){
+
+      window.location.href = "http://127.0.0.1:5501/Homepage.html";
+      
+    } else if(localStorage.getItem('loggedIn') = 'false'){
+          window.location.href = "http://127.0.0.1:5501/login.html"
+    }else{
+      window.location.href = "http://127.0.0.1:5501/registorForm.html";
+    }
+  }
   
