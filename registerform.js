@@ -1,10 +1,17 @@
-function signup(){
-    window.location.href = "http://127.0.0.1:5501/login.html";
-}
+function signIn(){
+    if(!localStorage.getItem('loggedIn')){
+      window.location.href = "http://127.0.0.1:5501/login.html";
+    // } else{
+    //     window.location.href = "http://127.0.0.1:5501/Homepage.html"
+  }
+  }
+  
 
 let signUp = document.getElementById('registerform');
+var registerLog = document.getElementById('reg_submit');
 
-signUp.addEventListener('submit',(e)=>{
+
+registerLog.addEventListener('click',(e)=>{
     e.preventDefault();
     var reg_username = document.getElementById('reg_username').value
     var reg_password = document.getElementById('reg_password').value
@@ -35,11 +42,37 @@ if(localStorage.getItem('user')){
     var userArray = JSON.parse(localStorage.getItem('user'))
     console.log(userArray);
 }
+users.push(userArray);
 
-users.push(user)
+console.log(users)
 
-// console.log(users)
+localStorage.setItem('users',users);
+alert("Your details are saved in the local storage");
 
 })
 
-console.log(user.reg_username);
+
+registerLog.addEventListener('click',(e)=>{
+  e.preventDefault();
+  window.location.href = "http://127.0.0.1:5501/login.html";
+  alert("Please login to continue shopping");
+
+})
+
+
+window.onload = function(e){
+    e.preventDefault();
+    if(localStorage.getItem('loggedIn')){
+
+      window.location.href = "http://127.0.0.1:5501/Homepage.html";
+      
+    } else if(localStorage.getItem('loggedIn') = 'false'){
+
+      window.location.href = "http://127.0.0.1:5501/login.html";
+    } else{
+        window.location.href = "http://127.0.0.1:5501/registorForm.html";
+    }
+
+  }
+  
+  

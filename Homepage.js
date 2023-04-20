@@ -73,10 +73,14 @@ function addToCart(id) {
 // updating cart
 
 function updatecart() {
-  renderCartItems();
-  renderSubtotal();
 
-  localStorage.setItem("CART", JSON.stringify(cart));
+  if(localStorage.getItem('loggedIn')){
+    renderCartItems();
+    renderSubtotal();
+  
+    localStorage.setItem("CART", JSON.stringify(cart));
+  }
+  
 }
 
 // rendering Subtotal
@@ -184,6 +188,7 @@ window.onclick = function(e){
 
 function logOut(){
   window.location.href = "http://127.0.0.1:5501/login.html";
+  localStorage.removeItem('loggedIn')
 }
 
 
@@ -245,6 +250,23 @@ function filterProduct(value) {
       });
 });
 
+
+let userdetail = document.getElementById('user-detail');
+window.addEventListener('load',()=>{
+
+  let userobj = localStorage.getItem('user')
+  console.log(userobj)
+
+  let userArray = JSON.parse(userobj)
+
+  console.log(userArray)
+
+
+  userdetail.innerHTML = `
+   <div>Hello ${userArray.reg_username}</div>
+`;
+
+})
 
 
 

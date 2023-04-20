@@ -99,11 +99,12 @@
 }
 
 .form-in{
-    width: min(24em,100%);
+    width: min(30em,100%);
     height: min(4em,100%);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    align-items:safe;
 
 }
 
@@ -112,7 +113,7 @@
     font-weight: bolder;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
     width: 60%;
     padding: 0.5em;
 }
